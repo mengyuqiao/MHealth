@@ -1,15 +1,17 @@
 # HNC Tracker
 
-A mobile web application for AI-assisted nutrition and pain medication tracking in head and neck cancer (HNC) patients undergoing radiation therapy. Built for a feasibility study evaluating real-time monitoring of the pain-nutrition relationship during treatment.
-
 ## Demo
 
-[https://github.com/mengyuqiao/HNC-Tracker/display.mp4](https://github.com/user-attachments/assets/d73cba85-8227-45ac-b55d-92fad794ac7d)
+### Patient App
+https://github.com/user-attachments/assets/36eafd2f-e3e2-4ff6-9df5-773ab57f1127
+
+### Clinician Dashboard
+https://github.com/user-attachments/assets/1d6661f8-6aca-4bfe-89dc-45f4e51479c9
 
 ## Screenshots
- 
+
 ### Clinician Portal
- 
+
 | Login | Patient Dashboard | Patient Detail |
 |---|---|---|
 | ![Clinician Login](screenshots/clinician_view1.jpg) | ![Patient Dashboard](screenshots/clinician_view2.jpg) | ![Patient Detail](screenshots/clinician_view3.jpg) |
@@ -23,12 +25,13 @@ HNC patients face high rates of malnutrition (50–80%) and pain during radiothe
 - Medication photo logging with AI OCR (reads bottle label automatically)
 - Pain rating (0–9 scale) before and after each dose
 - 60-minute follow-up check-in to measure medication effectiveness
+- Daily weight logging (manual entry or Bluetooth scale)
 
 **Clinician dashboard:**
 - Real-time overview of all enrolled patients
 - Flags for low caloric intake (<50% of goal) and high pain (≥7/9)
-- Longitudinal charts: daily calories and pain before/after medication
-- Full medication and food log tables
+- Longitudinal charts: daily calories, pain before/after medication, weight trend
+- Full medication, food, and weight log tables
 
 ## Tech Stack
 
@@ -53,8 +56,8 @@ HNC patients face high rates of malnutrition (50–80%) and pain during radiothe
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/hnc-tracker.git
-cd hnc-tracker
+git clone https://github.com/mengyuqiao/HNC-Tracker.git
+cd HNC-Tracker
 ```
 
 **2. Run the setup script**
@@ -142,15 +145,33 @@ The database is seeded with demo data on first run.
 hnc-tracker/
 ├── app.py                  # Flask app and all routes
 ├── vlm_service.py          # Qwen2.5-VL model loader and inference
-├── database.py             # SQLAlchemy models (Patient, FoodLog, MedLog, Clinician)
+├── database.py             # SQLAlchemy models (Patient, FoodLog, MedLog, WeightLog, Clinician)
 ├── config.py               # Settings loaded from .env
 ├── run.sh                  # Startup script (tmux + ngrok)
 ├── setup_hnc_tracker.sh    # One-time environment setup
 ├── .env                    # Environment variables (not committed)
 ├── templates/
 │   ├── base.html
-│   ├── patient/            # 10 patient-facing screens
+│   ├── patient/            # 12 patient-facing screens
+│   │   ├── welcome.html
+│   │   ├── enter_code.html
+│   │   ├── confirm_identity.html
+│   │   ├── home.html
+│   │   ├── food_log.html
+│   │   ├── food_confirm.html
+│   │   ├── food_saved.html
+│   │   ├── med_log.html
+│   │   ├── med_confirm.html
+│   │   ├── pain_rating.html
+│   │   ├── med_saved.html
+│   │   ├── pain_checkin.html
+│   │   ├── checkin_saved.html
+│   │   ├── weight_log.html
+│   │   └── weight_saved.html
 │   └── clinician/          # 3 clinician screens
+│       ├── login.html
+│       ├── dashboard.html
+│       └── patient.html
 ├── static/
 │   ├── css/style.css       # Colorblind-accessible design system
 │   └── js/
@@ -167,15 +188,19 @@ hnc-tracker/
 ```
 Welcome → Enter 6-digit code → Confirm identity → Home
   ├── Log a meal → Take photo → AI estimates calories → Confirm portion → Saved
-  └── Log medicine → Take photo → AI reads label → Confirm med → Rate pain (0–9)
-        └── [60 min later] Follow-up check-in → Rate pain again → Delta recorded
+  ├── Log medicine → Take photo → AI reads label → Confirm med → Rate pain (0–9)
+  │     └── [60 min later] Follow-up check-in → Rate pain again → Delta recorded
+  └── Log weight → Manual entry (lbs) or Bluetooth scale → Saved (shows delta)
 ```
 
 ## Clinician Flow
 
 ```
 Login → Dashboard (all patients, flags for low cal / high pain)
-  └── Patient detail → Calorie chart (14 days) + Pain timeline + Med log table
+  └── Patient detail → Calorie chart (14 days)
+                     + Pain before/after chart
+                     + Weight trend chart
+                     + Medication log table
 ```
 
 ## Colorblind Accessibility
