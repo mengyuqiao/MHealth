@@ -61,3 +61,15 @@ INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:00:48] "[33mGET /favicon.ico HTTP/1
 INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:00:59] "GET /clinician/login HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:01:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:01:00] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:02:56] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:02:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:02:56] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:03:05] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:03:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:03:43] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:03:44] "GET /static/css/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:03:44] "GET /static/js/app.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:04:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:04:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:04:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 11:04:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
