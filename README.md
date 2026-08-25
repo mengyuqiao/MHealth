@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/1d6661f8-6aca-4bfe-89dc-45f4e51479c9
 
 | Login | Patient Dashboard | Patient Detail |
 |---|---|---|
-| ![Clinician Login](screenshots/clinician_view1.jpg) | ![Patient Dashboard](screenshots/clinician-view2.jpg) | ![Patient Detail](screenshots/clinician-view3.jpg) |
+| ![Clinician Login](screenshots/clinician_view1.jpg) | ![Patient Dashboard](screenshots/clinician_view2.jpg) | ![Patient Detail](screenshots/clinician_view3.jpg) |
 
 ## Overview
 
@@ -56,16 +56,16 @@ HNC patients face high rates of malnutrition (50–80%) and pain during radiothe
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/mengyuqiao/HNC-Tracker.git
+git clone https://github.com/mengyuqiao/MHealth.git
 cd HNC-Tracker
 ```
 
 **2. Run the setup script**
 ```bash
-bash setup_hnc_tracker.sh
+bash setup_mhealth.sh
 ```
 
-This creates a conda environment named `hnc-tracker` and installs all dependencies including PyTorch (CUDA 12.4), Flask, and Qwen2.5-VL.
+This creates a conda environment named `mhealth` and installs all dependencies including PyTorch (CUDA 12.4), Flask, and Qwen2.5-VL.
 
 **3. Configure environment**
 
@@ -142,13 +142,13 @@ The database is seeded with demo data on first run.
 ## Project Structure
 
 ```
-hnc-tracker/
+mhealth/
 ├── app.py                  # Flask app and all routes
 ├── vlm_service.py          # Qwen2.5-VL model loader and inference
 ├── database.py             # SQLAlchemy models (Patient, FoodLog, MedLog, WeightLog, Clinician)
 ├── config.py               # Settings loaded from .env
 ├── run.sh                  # Startup script (tmux + ngrok)
-├── setup_hnc_tracker.sh    # One-time environment setup
+├── setup_mhealth.sh    # One-time environment setup
 ├── .env                    # Environment variables (not committed)
 ├── templates/
 │   ├── base.html
@@ -180,7 +180,7 @@ hnc-tracker/
 ├── uploads/                # Temporary image storage (auto-cleaned)
 ├── logs/                   # Timestamped log files
 └── instance/
-    └── hnc_tracker.db      # SQLite database
+    └── mhealth.db      # SQLite database
 ```
 
 ## Patient Flow
