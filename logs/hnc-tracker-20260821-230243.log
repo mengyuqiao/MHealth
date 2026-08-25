@@ -1,0 +1,81 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://128.226.116.62:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:vlm_service:Loading Qwen/Qwen2.5-VL-7B-Instruct on GPU 4 ...
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/chat_template.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/chat_template.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/audio_tokenizer_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/tokenizer_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/model.safetensors.index.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct/revision/main "HTTP/1.1 200 OK"
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 17133.59it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   2%|▏         | 16/729 [00:00<00:04, 151.21it/s]Loading weights:   7%|▋         | 54/729 [00:00<00:02, 272.88it/s]Loading weights:  12%|█▏        | 89/729 [00:00<00:02, 306.06it/s]Loading weights:  17%|█▋        | 126/729 [00:00<00:01, 329.37it/s]Loading weights:  24%|██▎       | 172/729 [00:00<00:01, 346.23it/s]Loading weights:  29%|██▉       | 210/729 [00:00<00:01, 356.62it/s]Loading weights:  35%|███▍      | 252/729 [00:00<00:01, 376.05it/s]Loading weights:  40%|███▉      | 290/729 [00:00<00:01, 371.86it/s]Loading weights:  45%|████▍     | 328/729 [00:00<00:01, 355.34it/s]Loading weights:  74%|███████▍  | 543/729 [00:01<00:00, 877.65it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 639.13it/s]
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/generation_config.json "HTTP/1.1 200 OK"
+INFO:vlm_service:VLM loaded and ready.
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:22] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:22] "GET /static/js/app.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:22] "GET /static/css/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:31] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:45] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:45] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:45] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:45] "GET /static/js/app.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:45] "GET /static/css/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:49] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:55] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:55] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [22/Aug/2026 11:03:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:15:40] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:15:41] "GET /static/js/app.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:15:41] "GET /static/css/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:15:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:15:46] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:15:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:15:47] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:15:48] "GET /enter-code HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:15:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:15:49] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:38:01] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:38:01] "GET /static/css/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [25/Aug/2026 10:38:01] "GET /static/js/app.js HTTP/1.1" 200 -

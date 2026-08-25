@@ -1,16 +1,43 @@
 {% extends "base.html" %}
-{% block title %}{{ patient.name }}{% endblock %}
+{% block title %}{{ patient.anon_id or patient.code }}{% endblock %}
 {% block body_class %}clinician-screen{% endblock %}
 {% block head %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js">
+// ── Weight chart ───────────────────────────────────────────────────────
+new Chart(document.getElementById('weightChart'), {
+  type: 'line',
+  data: {
+    labels: weightData.map(w => {
+      const dt = new Date(w.date + 'T12:00:00');
+      return dt.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+    }),
+    datasets: [{
+      label: 'Weight (lbs)',
+      data: weightData.map(w => w.weight),
+      borderColor: '#1a4a6b',
+      backgroundColor: 'rgba(26,74,107,0.08)',
+      tension: 0.3,
+      pointRadius: 5,
+      fill: true,
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { grid: { color: '#e8e8e8' } }
+    }
+  }
+});
+
+</script>
 {% endblock %}
 {% block body %}
 <div class="clinician-wrap">
   <div class="clinician-header">
     <div>
       <a href="{{ url_for('clinician_dashboard') }}" class="back-link">← All patients</a>
-      <h1 class="clinician-title">{{ patient.name }}</h1>
-      <div class="clinician-sub">DOB: {{ patient.birthdate }} · Goal: {{ patient.calorie_goal }} cal/day</div>
+      <h1 class="clinician-title">{{ patient.anon_id or patient.code }}</h1>
+      <div class="clinician-sub">Goal: {{ patient.calorie_goal }} cal/day</div>
     </div>
   </div>
 
@@ -25,6 +52,13 @@
       <span class="chip-val">{{ patient.today_med_logs()|length }}</span>
     </div>
     {% set last_med = med_logs[-1] if med_logs else None %}
+    {% set latest_wt = patient.latest_weight() %}
+    {% if latest_wt %}
+    <div class="chip">
+      <span class="chip-label">Latest weight</span>
+      <span class="chip-val">{{ latest_wt.weight_lbs }} lbs</span>
+    </div>
+    {% endif %}
     {% if last_med %}
     <div class="chip">
       <span class="chip-label">Last pain score</span>
@@ -47,6 +81,15 @@
     <div class="chart-title">Pain Before / After Medication</div>
     <div class="chart-wrap">
       <canvas id="painChart"></canvas>
+    </div>
+  </div>
+
+
+  <!-- Weight chart -->
+  <div class="chart-card">
+    <div class="chart-title">Weight Trend (last 14 days)</div>
+    <div class="chart-wrap">
+      <canvas id="weightChart"></canvas>
     </div>
   </div>
 
@@ -80,6 +123,7 @@
 {% block scripts %}
 <script>
 const calData   = {{ daily_calories | tojson }};
+const weightData = {{ weight_timeline | tojson }};
 const painData  = {{ pain_timeline  | tojson }};
 const goal      = {{ patient.calorie_goal }};
 
@@ -154,5 +198,32 @@ new Chart(document.getElementById('painChart'), {
     }
   }
 });
+
+// ── Weight chart ───────────────────────────────────────────────────────
+new Chart(document.getElementById('weightChart'), {
+  type: 'line',
+  data: {
+    labels: weightData.map(w => {
+      const dt = new Date(w.date + 'T12:00:00');
+      return dt.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+    }),
+    datasets: [{
+      label: 'Weight (lbs)',
+      data: weightData.map(w => w.weight),
+      borderColor: '#1a4a6b',
+      backgroundColor: 'rgba(26,74,107,0.08)',
+      tension: 0.3,
+      pointRadius: 5,
+      fill: true,
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: { grid: { color: '#e8e8e8' } }
+    }
+  }
+});
+
 </script>
 {% endblock %}

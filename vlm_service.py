@@ -3,7 +3,11 @@ VLM Service — Qwen2.5-VL-7B-Instruct
 Loaded once at startup on the configured GPU.
 Exposes two functions:
   analyze_food(image_path)      -> {"calories": int, "description": str}
-  analyze_medication(image_path) -> {"med_name": str, "dosage": str, "instructions": str}
+  analyze_medication(image_path) -> {"med_name": str, "dosage": str}
+
+De-identification approach follows HHS HIPAA guidance:
+https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html
+Only medication name and strength are extracted. All other PHI is discarded.
 """
 
 import os
@@ -74,11 +78,10 @@ def _run_inference(image_path: str, prompt: str) -> str:
     with torch.no_grad():
         output_ids = _model.generate(
             **inputs,
-            max_new_tokens=256,
+            max_new_tokens=64,  # short output — we only need name + strength
             do_sample=False,
         )
 
-    # Trim input tokens from output
     trimmed = [
         out[len(inp):] for inp, out in zip(inputs.input_ids, output_ids)
     ]
@@ -118,31 +121,62 @@ def analyze_food(image_path: str) -> dict:
 
 def analyze_medication(image_path: str) -> dict:
     """
-    Extract medication name, dosage, and instructions from a bottle/package photo.
-    Returns: {"med_name": str, "dosage": str, "instructions": str, "error": str|None}
+    Extract ONLY medication name and strength from a bottle/package photo.
+    All other information (patient name, address, prescriber, pharmacy,
+    prescription number, dates, barcodes, QR codes) is intentionally
+    ignored and never stored, per HHS HIPAA de-identification guidance:
+    https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html
+
+    Returns: {"med_name": str, "dosage": str, "error": str|None}
     """
     prompt = (
-        "Look at this medication bottle or package label. Extract only the medication name, "
-        "dosage strength, and dosing instructions. Do NOT include patient name, address, "
-        "prescriber name, pharmacy info, date, or any personal identifiers. "
+        "You are reading a medication label for a medical tracking app. "
+        "Your task is to extract ONLY two pieces of information:\n"
+        "1. The medication name (drug name only, e.g. Oxycodone, Tylenol, Metformin)\n"
+        "2. The strength (e.g. 5 mg, 500 mg, 10 mg/5 mL)\n\n"
+        "Do NOT extract or output any of the following — ignore them completely:\n"
+        "- Patient name, address, date of birth\n"
+        "- Prescriber name or address\n"
+        "- Pharmacy name, address, or phone number\n"
+        "- Prescription number or refill information\n"
+        "- Dispensing date or expiration date\n"
+        "- Barcode, QR code, or lot number\n"
+        "- Dosing instructions or warnings\n\n"
         "Respond in this exact format (no extra text):\n"
         "MED_NAME: <medication name only>\n"
-        "DOSAGE: <strength, e.g. 5 mg>\n"
-        "INSTRUCTIONS: <dosing instructions>\n"
-        "If you cannot read the label, respond:\n"
+        "STRENGTH: <strength only>\n\n"
+        "If you cannot read the label clearly, respond:\n"
         "MED_NAME: Unknown\n"
-        "DOSAGE: Unknown\n"
-        "INSTRUCTIONS: Unknown"
+        "STRENGTH: Unknown"
     )
 
     try:
         raw = _run_inference(image_path, prompt)
         lines = {line.split(":")[0].strip(): ":".join(line.split(":")[1:]).strip()
                  for line in raw.splitlines() if ":" in line}
+        med_name = lines.get("MED_NAME", "Unknown").strip()
+        dosage   = lines.get("STRENGTH", "").strip()
+
+        # Safety check: if output looks like it contains PHI (name-like patterns,
+        # numbers that look like phone/rx numbers), fall back to Unknown
+        import re
+        phi_patterns = [
+            r'\b\d{10}\b',           # phone numbers
+            r'\bRx\s*#?\s*\d+\b',   # prescription numbers
+            r'\b\d{1,2}/\d{1,2}/\d{2,4}\b',  # dates
+        ]
+        combined = f"{med_name} {dosage}"
+        for pattern in phi_patterns:
+            if re.search(pattern, combined, re.IGNORECASE):
+                logger.warning(f"PHI pattern detected in VLM output, redacting: {combined}")
+                med_name = "Unknown"
+                dosage = ""
+                break
+
         return {
-            "med_name":     lines.get("MED_NAME", "Unknown"),
-            "dosage":       lines.get("DOSAGE", ""),
-            "instructions": lines.get("INSTRUCTIONS", ""),
+            "med_name": med_name,
+            "dosage":   dosage,
+            "instructions": "",   # intentionally empty — not collected per de-id policy
             "error": None,
         }
     except Exception as e:

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Weight Saved{% endblock %}
+{% block body_class %}patient-screen screen-saved{% endblock %}
+{% block body %}
+<div class="screen-wrap center-content">
+  <div class="success-icon">✓</div>
+  <h2 class="saved-title">Saved!</h2>
+  <p class="saved-sub">Your weight was recorded.</p>
+
+  <div class="saved-summary" style="max-width:280px;">
+    <div class="saved-summary-row">
+      <span>Today's weight</span>
+      <span><strong>{{ log.weight_lbs }} lbs</strong></span>
+    </div>
+    {% if prev_log and prev_log.id != log.id %}
+    <div class="saved-summary-row">
+      <span>Previous</span>
+      <span>
+        {% set delta = log.weight_lbs - prev_log.weight_lbs %}
+        {{ prev_log.weight_lbs }} lbs
+        <span style="color: {% if delta <= 0 %}var(--color-secondary){% else %}var(--color-accent){% endif %}; font-weight:700;">
+          ({% if delta > 0 %}+{% endif %}{{ "%.1f"|format(delta) }})
+        </span>
+      </span>
+    </div>
+    {% endif %}
+  </div>
+
+  <a href="{{ url_for('patient_home') }}" class="btn btn-primary btn-large" style="margin-top:2rem;">Done</a>
+</div>
+{% endblock %}

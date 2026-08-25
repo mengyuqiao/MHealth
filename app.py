@@ -11,7 +11,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 
 from config import Config
-from database import db, Patient, FoodLog, MedLog, Clinician
+from database import db, Patient, FoodLog, MedLog, WeightLog, Clinician
 import vlm_service
 
 # ── App setup ─────────────────────────────────────────────────────────────────
@@ -338,6 +338,55 @@ def api_pending_followup():
         })
     return jsonify({'pending': False})
 
+
+# ── Patient: Weight Logging ────────────────────────────────────────────────────
+@app.route('/log/weight', methods=['GET', 'POST'])
+@patient_required
+def log_weight():
+    today_weight = current_user.today_weight()
+
+    if request.method == 'POST':
+        try:
+            weight_lbs = float(request.form.get('weight_lbs', 0))
+        except ValueError:
+            flash('Please enter a valid weight.')
+            return redirect(request.url)
+
+        if weight_lbs < 50 or weight_lbs > 500:
+            flash('Please enter a weight between 50 and 500 lbs.')
+            return redirect(request.url)
+
+        method = request.form.get('method', 'manual')
+
+        # Update today's log if it already exists
+        if today_weight:
+            today_weight.weight_lbs = weight_lbs
+            today_weight.method = method
+            log = today_weight
+        else:
+            log = WeightLog(
+                patient_id = current_user.id,
+                weight_lbs = weight_lbs,
+                method     = method,
+            )
+            db.session.add(log)
+        db.session.commit()
+
+        return redirect(url_for('weight_saved', log_id=log.id))
+
+    return render_template('patient/weight_log.html', today_weight=today_weight)
+
+@app.route('/log/weight/saved/<int:log_id>')
+@patient_required
+def weight_saved(log_id):
+    log = WeightLog.query.get_or_404(log_id)
+    # Get previous log for delta display
+    prev_log = WeightLog.query.filter(
+        WeightLog.patient_id == current_user.id,
+        WeightLog.id != log_id
+    ).order_by(WeightLog.logged_at.desc()).first()
+    return render_template('patient/weight_saved.html', log=log, prev_log=prev_log)
+
 # ── Clinician: Auth ────────────────────────────────────────────────────────────
 @app.route('/clinician/login', methods=['GET', 'POST'])
 def clinician_login():
@@ -430,10 +479,21 @@ def clinician_patient(patient_id):
         for ml in med_logs
     ]
 
+    weight_logs = WeightLog.query.filter(
+        WeightLog.patient_id == patient_id,
+        WeightLog.logged_at >= two_weeks_ago
+    ).order_by(WeightLog.logged_at).all()
+
+    weight_timeline = [
+        {'date': w.logged_at.strftime('%Y-%m-%d'), 'weight': w.weight_lbs}
+        for w in weight_logs
+    ]
+
     return render_template('clinician/patient.html',
                            patient=patient,
                            daily_calories=dict(daily_calories),
                            pain_timeline=pain_timeline,
+                           weight_timeline=weight_timeline,
                            med_logs=med_logs,
                            food_logs=food_logs)
 

@@ -1,0 +1,189 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://128.226.116.62:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:vlm_service:Loading Qwen/Qwen2.5-VL-7B-Instruct on GPU 4 ...
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/chat_template.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/chat_template.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/audio_tokenizer_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/tokenizer_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/preprocessor_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/model.safetensors.index.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct/revision/main "HTTP/1.1 200 OK"
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 6725.95it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:   1%|          | 9/729 [00:00<00:08, 89.85it/s]Loading weights:   7%|▋         | 48/729 [00:00<00:02, 260.08it/s]Loading weights:  12%|█▏        | 88/729 [00:00<00:02, 312.38it/s]Loading weights:  17%|█▋        | 125/729 [00:00<00:01, 326.48it/s]Loading weights:  23%|██▎       | 168/729 [00:00<00:01, 360.18it/s]Loading weights:  29%|██▊       | 208/729 [00:00<00:01, 362.12it/s]Loading weights:  34%|███▎      | 245/729 [00:00<00:01, 364.33it/s]Loading weights:  39%|███▊      | 282/729 [00:00<00:01, 363.98it/s]Loading weights:  45%|████▍     | 328/729 [00:00<00:01, 377.44it/s]Loading weights:  76%|███████▌  | 553/729 [00:01<00:00, 927.41it/s]Loading weights: 100%|██████████| 729/729 [00:01<00:00, 655.14it/s]
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5/generation_config.json "HTTP/1.1 200 OK"
+INFO:vlm_service:VLM loaded and ready.
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:04:33] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:04:33] "GET /static/js/app.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:04:33] "GET /static/css/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:04:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:04:55] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:04:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:05:31] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:05:31] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:05:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:05:37] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:05:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:15:26] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:15:27] "GET /static/css/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:15:27] "GET /static/js/app.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:15:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:51] "GET /enter-code HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:52] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:55] "[32mPOST /enter-code HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:55] "GET /confirm-identity HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:56] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:57] "[32mPOST /confirm-identity HTTP/1.1[0m" 302 -
+/home/yuqiao/hnc-tracker/app.py:35: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  return Patient.query.get(int(user_id.split('-')[1]))
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:57] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:16:57] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:00] "GET /log/food HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:01] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:01] "GET /static/js/camera.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:47] "GET /log/food HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:47] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:47] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:53] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:17:54] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:01] "GET /enter-code HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:01] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:04] "[32mPOST /enter-code HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:04] "GET /confirm-identity HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:04] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:05] "[32mPOST /confirm-identity HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:05] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:06] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:07] "GET /log/weight HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:08] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:15] "[32mPOST /log/weight HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:15] "GET /log/weight/saved/2 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:15] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:16] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:17] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:19] "GET /log/food HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:19] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:19] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:38] "[32mPOST /log/food HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:39] "GET /log/food/confirm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:39] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:41] "[32mPOST /log/food/confirm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:42] "GET /log/food/saved/12 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:42] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:43] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:44] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:46] "GET /log/med HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:47] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:18:47] "[36mGET /static/js/camera.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:07] "[32mPOST /log/med HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:08] "GET /log/med/confirm HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:08] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:10] "[32mPOST /log/med/confirm HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:10] "GET /log/med/pain HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:11] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:13] "[32mPOST /log/med/pain HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:13] "GET /log/med/saved/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:13] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:15] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:19:16] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:20:16] "GET /api/pending-followup HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:20:26] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:20:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:20:27] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:30] "[32mPOST /clinician/login HTTP/1.1[0m" 302 -
+/home/yuqiao/hnc-tracker/app.py:37: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  return Clinician.query.get(int(user_id.split('-')[1]))
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:31] "GET /clinician/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:31] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:36] "GET /clinician/patient/3 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:37] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:44] "GET /clinician/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:44] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:47] "GET /clinician/patient/4 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:47] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:50] "GET /clinician/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:22:50] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:47:40] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:47:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:47:41] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:47:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:03] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:03] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:11] "[32mPOST /clinician/login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:11] "GET /clinician/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:11] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:16] "GET /clinician/patient/3 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:16] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:41] "[32mGET /api/pending-followup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:48:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:55:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:55:47] "GET /clinician/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:55:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:59:07] "[32mGET /api/pending-followup HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Aug/2026 22:59:08] "GET / HTTP/1.1" 200 -

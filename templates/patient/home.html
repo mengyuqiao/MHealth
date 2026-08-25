@@ -82,6 +82,36 @@
     {% endif %}
   </div>
 
+
+  <!-- Weight card -->
+  {% set today_wt = patient.today_weight() %}
+  <div class="stat-card weight-card">
+    <div class="stat-card-label">Today's weight</div>
+    {% if today_wt %}
+      <div class="weight-logged-row">
+        <span class="weight-logged-val">{{ today_wt.weight_lbs }} lbs</span>
+        {% set latest = patient.latest_weight() %}
+        {% set prev = namespace(val=None) %}
+        {% for w in patient.weight_logs %}
+          {% if w.id != today_wt.id and prev.val is none %}
+            {% set prev.val = w.weight_lbs %}
+          {% endif %}
+        {% endfor %}
+        <a href="{{ url_for('log_weight') }}" class="weight-edit-link">Edit</a>
+      </div>
+      <div class="weight-logged-sub">Logged today ✓</div>
+    {% else %}
+      <a href="{{ url_for('log_weight') }}" class="weight-prompt">
+        <span class="weight-prompt-icon">⚖️</span>
+        <div>
+          <div class="weight-prompt-title">Log your weight</div>
+          <div class="weight-prompt-sub">Once a day, in the morning</div>
+        </div>
+        <span class="weight-prompt-arrow">›</span>
+      </a>
+    {% endif %}
+  </div>
+
   <!-- Action buttons -->
   <div class="action-btns">
     <a href="{{ url_for('log_food') }}" class="btn btn-primary btn-large">

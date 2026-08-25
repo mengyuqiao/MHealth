@@ -16,7 +16,7 @@
     {% set p = d.patient %}
     <a href="{{ url_for('clinician_patient', patient_id=p.id) }}" class="patient-card {% if d.flag_pain or d.flag_nutrition %}patient-card-flagged{% endif %}">
       <div class="patient-card-header">
-        <span class="patient-name">{{ p.name }}</span>
+        <span class="patient-name">{{ p.anon_id or p.code }}</span>
         <span class="patient-flags">
           {% if d.flag_nutrition %}<span class="flag flag-nutrition" title="Low calorie intake">🍽</span>{% endif %}
           {% if d.flag_pain %}<span class="flag flag-pain" title="High pain reported">⚠️</span>{% endif %}

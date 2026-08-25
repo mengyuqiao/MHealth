@@ -12,7 +12,6 @@ class Patient(UserMixin, db.Model):
     birthdate     = db.Column(db.String(20), nullable=False)
     calorie_goal  = db.Column(db.Integer, default=2000)
     created_at    = db.Column(db.DateTime, default=datetime.utcnow)
-    anon_id       = db.Column(db.String(10), unique=True)
     is_active     = db.Column(db.Boolean, default=True)
 
     food_logs   = db.relationship('FoodLog',   backref='patient', lazy=True, cascade='all, delete-orphan')

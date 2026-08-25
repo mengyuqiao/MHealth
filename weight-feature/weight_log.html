@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Log Your Weight{% endblock %}
+{% block body_class %}patient-screen{% endblock %}
+{% block body %}
+<div class="screen-wrap">
+  <div class="screen-nav">
+    <a href="{{ url_for('patient_home') }}" class="back-btn">← Back</a>
+    <h2 class="screen-title-inline">Today's weight</h2>
+  </div>
+  <p class="screen-sub">Great job checking in.</p>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}<div class="alert alert-error">{{ messages[0] }}</div>{% endif %}
+  {% endwith %}
+
+  {% if today_weight %}
+  <div class="alert" style="background:#e6f4ec; border-color:#2a7d4f; color:#1a4a2a;">
+    ✓ Already logged today: <strong>{{ today_weight.weight_lbs }} lbs</strong>
+  </div>
+  {% endif %}
+
+  <!-- E-scale panel -->
+  <div class="weight-scale-card" id="scaleCard">
+    <div class="scale-icon">⚖️</div>
+    <div class="scale-msg" id="scaleMsg">Step on your scale to record<br>your weight automatically</div>
+    <div class="scale-status" id="scaleStatus">
+      <span class="scale-dot scale-dot-off" id="scaleDot"></span>
+      <span id="scaleStatusText">Scale not connected</span>
+    </div>
+    <button type="button" class="btn btn-outline btn-sm" id="connectScaleBtn" style="margin-top:1rem; width:auto; align-self:center;">
+      Connect scale
+    </button>
+  </div>
+
+  <div class="weight-divider">or</div>
+
+  <!-- Manual entry -->
+  <form method="POST" id="weightForm">
+    <div class="weight-manual-row">
+      <div class="weight-manual-icon">⌨️</div>
+      <div class="weight-manual-content">
+        <label class="weight-manual-label" for="weightInput">Enter weight by hand</label>
+        <div class="weight-input-wrap">
+          <input
+            type="number"
+            id="weightInput"
+            name="weight_lbs"
+            class="weight-input"
+            placeholder="0.0"
+            step="0.1"
+            min="50"
+            max="500"
+            value="{{ today_weight.weight_lbs if today_weight else '' }}"
+            inputmode="decimal"
+          >
+          <span class="weight-unit">lbs</span>
+        </div>
+      </div>
+    </div>
+    <p class="help-text" style="text-align:left; margin-bottom:1.5rem;">
+      Use manual entry if your scale isn't nearby or won't connect.
+    </p>
+    <input type="hidden" name="method" id="methodInput" value="manual">
+    <button type="submit" class="btn btn-primary btn-large">Save weight</button>
+  </form>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+  // Simulate Bluetooth scale connection (placeholder for future BLE integration)
+  const connectBtn    = document.getElementById('connectScaleBtn');
+  const scaleDot      = document.getElementById('scaleDot');
+  const scaleStatusTxt= document.getElementById('scaleStatusText');
+  const scaleMsg      = document.getElementById('scaleMsg');
+  const weightInput   = document.getElementById('weightInput');
+  const methodInput   = document.getElementById('methodInput');
+
+  connectBtn.addEventListener('click', () => {
+    connectBtn.textContent = 'Connecting…';
+    connectBtn.disabled = true;
+
+    setTimeout(() => {
+      // In a real app, this would use Web Bluetooth API
+      // For now, show "not supported" gracefully
+      scaleStatusTxt.textContent = 'Bluetooth not supported in browser — use manual entry';
+      scaleDot.classList.remove('scale-dot-off');
+      scaleDot.classList.add('scale-dot-error');
+      connectBtn.style.display = 'none';
+    }, 1500);
+  });
+</script>
+{% endblock %}
