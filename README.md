@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/1d6661f8-6aca-4bfe-89dc-45f4e51479c9
 
 | Login | Patient Dashboard | Patient Detail |
 |---|---|---|
-| ![Clinician Login](screenshots/clinician_view1.jpg) | ![Patient Dashboard](screenshots/clinician_view2.jpg) | ![Patient Detail](screenshots/clinician_view3.jpg) |
+| ![Clinician Login](screenshots/clinician-view1.jpg) | ![Patient Dashboard](screenshots/clinician_view2.jpg) | ![Patient Detail](screenshots/clinician_view3.jpg) |
 
 ## Overview
 

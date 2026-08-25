@@ -6,7 +6,7 @@ cd "$(dirname "$0")"
 
 # ── Resolve conda base ───────────────────────────────────────────────────────
 CONDA_BASE=$(conda info --base 2>/dev/null || echo "$HOME/miniconda3")
-ACTIVATE="source $CONDA_BASE/etc/profile.d/conda.sh && conda activate mhealth"
+ACTIVATE="source $CONDA_BASE/etc/profile.d/conda.sh && conda activate hnc-tracker"
 
 # ── Logging ──────────────────────────────────────────────────────────────────
 LOG_DIR="logs"
